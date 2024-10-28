@@ -37,3 +37,19 @@ let pokemonList = [
         types: ['ground', 'poison']
     }
 ];
+
+let message = "";
+
+//for loop to display list on the page
+for(let i= 0; i < pokemonList.length; i++){
+    if(pokemonList[i].height > 1){
+        message = "- Wow, that's big!";
+    } else {
+        message = "";
+    }
+    document.write(
+        `${pokemonList[i].name} (height: ${pokemonList[i].height}) 
+        ${message} 
+        <br>`
+    );
+}
