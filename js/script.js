@@ -38,7 +38,7 @@ let pokemonList = [
     }
 ];
 
-let message = "";
+/*let message = "";
 
 //for loop to display list on the page
 for(let i= 0; i < pokemonList.length; i++){
@@ -52,4 +52,12 @@ for(let i= 0; i < pokemonList.length; i++){
         ${message} 
         <br>`
     );
-}
+} */
+
+//Exercise 1.5 solution part 1
+pokemonList.forEach(pokemon => {
+    if(pokemon.height >= 1){
+        document.write('Wow that is big <br><br>');
+    }
+    document.write(pokemon.name + ' | ' + pokemon.height + ' | ' + pokemon.types + '<br>');
+});
