@@ -18,7 +18,6 @@ for(let i= 0; i < pokemonList.length; i++){
     );
 } */
 
-
 //Exercise 1.5 solution part 2 IIFE
 let pokemonRepository = (function() {
     let pokemonList = [
@@ -30,7 +29,7 @@ let pokemonRepository = (function() {
         { name: 'Nidoking', height: 1.4, types: ['ground', 'poison'] },
     ];
 
-    function add(pokemon) {
+    /*function add(pokemon) {
         pokemonList.push(pokemon);
     }
     function getAll() {
@@ -39,9 +38,46 @@ let pokemonRepository = (function() {
     return {
         add: add,
         getAll: getAll
-    };
+    };*/
+
+    function getAll() {
+		return pokemonList;
+	}
+
+	function add(pokemon) {
+		{pokemonList.push(pokemon);}
+	}
+
+	function addListItem(pokemon) {
+		let pokemonList = document.querySelector('.pokemon-list');
+		let listpokemon = document.createElement('li');
+		let button = document.createElement('button');
+		button.innerText = pokemon.name;
+		button.classList.add('button-class');
+        
+        button.addEventListener('click', function() {
+        showDetails(pokemon); 
+        });
+
+		listpokemon.appendChild(button);
+		pokemonList.appendChild(listpokemon);
+	}
+
+	function showDetails(pokemon) {
+		console.log(pokemon)
+	}
+
+	return {
+		add: add,
+		getAll: getAll,
+		showDetails: showDetails,
+		addListItem: addListItem,
+	};
+
 })();
-let pokemons = pokemonRepository.getAll();
+
+
+/*let pokemons = pokemonRepository.getAll();
 
 //Exercise 1.5 solution part 1
 pokemons.forEach(pokemon => {
@@ -49,4 +85,8 @@ pokemons.forEach(pokemon => {
         document.write('Wow that is big <br><br>');
     }
     document.write(pokemon.name + ' | ' + pokemon.height + ' | ' + pokemon.types + '<br>');
+});*/
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+	pokemonRepository.addListItem(pokemon);
 });
