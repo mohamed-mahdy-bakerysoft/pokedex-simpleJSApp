@@ -82,7 +82,7 @@ let pokemonRepository = (function () {
             
             // Displaying abilities
             let abilities = document.createElement("p");
-            abilities.innerText = "Abilities: " + pokemon.abilities.join(", "); // use of join function to display list of abilities
+            abilities.innerText = "Abilities: " + pokemon.abilities.join(", "); // join function to display list of abilities
             
             //displaying Fronz and Back Images
             let image = document.createElement("img");
