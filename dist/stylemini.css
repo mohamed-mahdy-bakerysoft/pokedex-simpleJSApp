@@ -35,7 +35,7 @@ h2 {
 
 .btn,
 btn-primary {
-    background-color: rgba(30, 19, 37, .8196078431372549);
+    background-color: rgba(30, 19, 37, .8196078431372549); 
     padding: 10px;
     border: 3px solid #3f3e3a;
     border-radius: 8px;
@@ -44,6 +44,7 @@ btn-primary {
     font-weight: 500;
     transition: transform .2s, color .3s, border-color .3s, background-color .3s
 }
+
 
 .btn-primary:hover {
     color: #fff;
